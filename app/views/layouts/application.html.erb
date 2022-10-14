@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>LoginApp</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+<div class="container">
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <% if user_signed_in? %>
-  ログインしています
+  <head>
+    <title>LoginApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <h4>メールアドレス： <%= current_user.email %></h4>
-  <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
-  <% end %>
-</head>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if user_signed_in? %>
+    ログインしています
+
+    <h4>メールアドレス： <%= current_user.email %></h4>
+    <%= link_to "ログアウト",destroy_user_session_path, method: :delete ,class:"btn btn-primary"%>
+    <% end %>
+  </head>
+</div>
 
 <body>
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 
 </html>

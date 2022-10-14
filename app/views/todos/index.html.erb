@@ -3,7 +3,7 @@
 <h1>Todos</h1>
 
 <% if @todos.exists? %>
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>User</th>
@@ -17,9 +17,10 @@
     <tr>
       <td><%= current_user.email %></td>
       <td><%= todo.todo %></td>
-      <td><%= link_to 'Show', todo %></td>
-      <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-      <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Show', todo, class: "btn btn-primary" %></td>
+      <td><%= link_to 'Edit', edit_todo_path(todo), class: "btn btn-success" %></td>
+      <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %>
+      </td>
     </tr>
     <% end %>
   </tbody>
@@ -27,4 +28,4 @@
 <% end %>
 <br>
 
-<%= link_to 'New Todo', new_todo_path %>
+<%= link_to 'New Todo', new_todo_path, class: "btn btn-primary" %>
