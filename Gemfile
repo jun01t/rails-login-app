@@ -61,3 +61,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 gem 'erb-formatter'
 gem 'rubocop'
+gem 'activeadmin'
