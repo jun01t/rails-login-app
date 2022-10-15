@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
 
-<div class="container">
-
-  <head>
-    <title>LoginApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <% if user_signed_in? %>
-    ログインしています
-
-    <h4>メールアドレス： <%= current_user.email %></h4>
-    <%= link_to "ログアウト",destroy_user_session_path, method: :delete ,class:"btn btn-primary"%>
-    <% end %>
-  </head>
-</div>
+<head>
+  <title>LoginApp</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <div class="container">
+      <a class="navbar-brand" href="/todos" style="font-size:30px;margin:10px;">Rails Todo App</a>
+      <% if user_signed_in? %>
+      <ul class="navbar-nav navbar-right" style="list-style:none;">
+        <li class="nav-item" style="margin:25px;">
+          <p class="nav-link"><%= current_user.email %></p>
+        </li>
+        <li class="nav-item" style="margin:15px;">
+          <%= link_to "ログアウト",destroy_user_session_path, method: :delete,class:"btn btn-primary" %>
+        </li>
+      </ul>
+    </div>
+    <% end %>
+  </nav>
   <div class="container">
     <%= yield %>
   </div>
