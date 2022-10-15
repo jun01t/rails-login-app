@@ -1,6 +1,8 @@
 <h1>Editing Todo</h1>
 
-<%= render 'form', todo: @todo %>
+<div class="form-group">
+    <%= render 'form', todo: @todo,class:"form-control" %>
 
-<%= link_to 'Show', @todo %> |
-<%= link_to 'Back', todos_path %>
+    <%= link_to 'Show', @todo, class: "btn btn-default" %> |
+    <%= link_to 'Back', todos_path, class: "btn btn-info" %>
+</div>
