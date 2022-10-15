@@ -1,10 +1,9 @@
-<h1>Rails Todo App</h1>
+<h4 id="notice"><%= notice %></h4>
 <% if user_signed_in? %>
 ログインしています
 
 <h4>メールアドレス： <%= current_user.email %></h4>
 <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
 <% else %>
-<%= link_to "ログイン",new_user_session_path,class: 'post btn btn-primary' %>
-<%= link_to "新規登録",new_user_registration_path,class: 'post btn btn-info' %>
+<%= link_to "トップへ",root_path,class:"btn btn-primary" %>
 <% end %>
