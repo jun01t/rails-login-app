@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(_resource)
     flash[:notice] = 'ログアウトしました'
-    home_logout_path
+    logout_path
   end
 end
