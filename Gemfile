@@ -44,8 +44,6 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'bootstrap-sass'
-  gem 'rails-i18n'
   gem 'spring'
 end
 
@@ -68,6 +66,8 @@ group :production do
 end
 
 gem 'activeadmin'
+gem 'bootstrap-sass'
 gem 'devise'
 gem 'erb-formatter'
+gem 'rails-i18n'
 gem 'rubocop'
