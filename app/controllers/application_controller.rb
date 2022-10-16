@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
       todos_path # 　指定したいパスに変更
     end
   end
+
+  def after_sign_out_path_for(_resource)
+    flash[:notice] = 'ログアウトしました'
+    logout_path
+  end
 end
